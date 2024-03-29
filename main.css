@@ -22,3 +22,23 @@ footer {
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
 }
+a {
+    color: blueviolet;
+    text-decoration: none;
+}
+a:link {
+    color: brown;
+    text-decoration: line-through;
+}
+a:visited {
+    color: rgb(188, 16, 154);
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+    text-decoration: underline !important;
+}
+a:active {
+    color: black;
+    opacity: 0.3;
+} 
