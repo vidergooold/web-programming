@@ -25,6 +25,7 @@ footer {
 a {
     color: blueviolet;
     text-decoration: none;
+    transition: 1s 2s;
 }
 a:link {
     color: brown;
@@ -37,6 +38,7 @@ a:visited {
 a:hover {
     color: red;
     text-decoration: underline !important;
+    transition: 0.3s;
 }
 a:active {
     color: black;
