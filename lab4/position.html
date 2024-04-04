@@ -9,6 +9,12 @@
         <link rel="icon" href="../favicon-32x32.png">
         <link rel="icon" href="../favicon-48x48.ico">
         <style>
+            div.position-static div {
+                display: none;
+            }
+            div.position-relative:hover+div {
+                display: block;
+            }
             div {
                 width: 300px;
                 line-height: 70px;
@@ -22,13 +28,26 @@
                 position: relative;
                 left: 145px;
                 top: -130px;
-                z-index: -5;
+                z-index: 1;
             }
             .position-static {
                 position: relative;
                 left: 0px;
                 top: 0px;
-                z-index: 1;
+                z-index: 2;
+            }
+            .position-relative:hover {
+                z-index: 3;
+            }
+            .position-absolute {
+                position: absolute;
+                left: 300px;
+                transition: all 0.3s ease;
+            }
+            .position-absolute:hover {
+                transform: scale(1.1); 
+                background-color: lightblue; 
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             }
         </style>
     </head>
@@ -45,7 +64,7 @@
             <div class="position-relative">relative</div>
             <div>static</div>
             <div>static</div>
-            <div>static</div>
+            <div class="position-absolute">absolute</div>
             <div>static</div>
             <div>static</div>
             <div>static</div>
