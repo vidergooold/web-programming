@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Видергольд Ирина Сергеевна. Лабораторная 4</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+        <link rel="icon" href="../favicon-48x48.ico">
+        <style>
+            .comic-container {
+                position: relative;
+                display: inline-block;
+            }
+
+            .comic-container img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+
+            .speech-bubble {
+                position: absolute;
+                padding: 20px 30px;
+                background-color: white;
+                border-radius: 50%;
+                border: 2px solid black;
+                text-align: center;
+                box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+                font-family: Arial, sans-serif;
+                color: #000000;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+
+            .comic-container:hover .speech-bubble {
+                opacity: 1;
+            }
+
+            .speech-bubble:nth-child(2) {
+                top: 50%;
+                left: 55%;
+            }
+
+            .speech-bubble:nth-child(3) {
+                top: 40%;
+                left: 65%;
+            }
+
+            .speech-bubble:nth-child(4) {
+                top: 30%;
+                left: 75%;
+            }
+
+            .speech-bubble:nth-child(5) {
+                top: 20%;
+                left: 83%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 4
+            <hr>
+        </header>
+
+        <main>
+            <div class="comic-container">
+                <img src="comics.jpg" alt="Comic Image">
+                <div class="speech-bubble"></div>
+                <div class="speech-bubble"></div>
+                <div class="speech-bubble"></div>
+                <div class="speech-bubble">Rrrrrr</div>
+            </div>
+        </main>
+
+        <footer>
+            <hr>
+            &copy; Видергольд Ирина, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html> 
