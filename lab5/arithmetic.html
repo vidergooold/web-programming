@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Видергольд Ирина Сергеевна. Лабораторная 5</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+        <link rel="icon" href="../favicon-48x48.ico">
+        <script>
+            function showSum() {
+                let a = 5154;
+                let b = 7891;
+                let result = a + b;
+                alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
+            }
+            function showAuthor() {
+                let author = 'Автор страницы:\nВидергольд Ирина Сергеевна';
+                alert(author);
+            }
+        </script>
+        <style>
+            .message {
+                width: 250px;
+                line-height: 50px;
+                height: 50px;
+                text-align: center;
+                background-color: rgb(222, 196, 224);
+                margin: 10px;
+                cursor: pointer;
+                display: inline-block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header onclick="showAuthor()">
+            НГТУ, ФБ, Лабораторная работа 5
+            <hr>
+        </header>
+
+        <main>
+            <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
+            <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+           
+        </main>
+
+        <footer>
+            <hr>
+            &copy; Видергольд Ирина, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html> 
