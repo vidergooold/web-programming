@@ -14,11 +14,47 @@ main {
     background-color: lightblue;
     color: rgb(246, 34, 69);
     font-family: Arial, Helvetica, sans-serif;
-    margin: 10px;
+    margin: 10px 20px 50px;
 }
 footer {
     background-color: lightblue;
     color: rgb(246, 34, 69);
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+a {
+    color: blueviolet;
+    text-decoration: none;
+    transition: 1s 2s;
+}
+a:link {
+    color: brown;
+    text-decoration: none;
+}
+a:visited {
+    color: rgb(188, 16, 154);
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+    text-decoration: underline !important;
+    transition: 0.3s;
+}
+a:active {
+    color: black;
+    opacity: 0.3;
+} 
+div.menu {
+    border: 7px solid #002d8880;
+    border-radius: 5px;
+    width: 250px;
+    margin: 0 auto;
+}
+div.menu:hover {
+    background-color: #ffffff30;
+    box-shadow: 0 0 15px #00000030;
 }
