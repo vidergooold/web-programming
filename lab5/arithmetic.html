@@ -15,6 +15,14 @@
                 let result = a + b;
                 alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
             }
+            function showAuthor() {
+                let author = 'Автор страницы:\nВидергольд Ирина Сергеевна';
+                alert(author);
+            }
+            function welcomeMessage() {
+                let message = "Welcome to my webpage!\nHave a good one:)";
+                alert(message);
+            }
         </script>
         <style>
             .message {
@@ -26,21 +34,27 @@
                 vertical-align: top;
                 padding: 10px;
             }
+            header {
+                cursor: pointer;
+            } 
+            footer {
+                cursor: not-allowed;
+            }
         </style>
     </head>
 
     <body>
-        <header>
+        <header onclick="showAuthor()">
             НГТУ, ФБ, Лабораторная работа 5
             <hr>
         </header>
 
         <main>
             <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-            <div class="message" onclick="showSum()">Узнать, кто автор страницы</div>
+            <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
         </main>
 
-        <footer>
+        <footer ondblclick="welcomeMessage()">
             <hr>
             &copy; Видергольд Ирина, ФБИ-22, 2 курс, 2024
         </footer>
