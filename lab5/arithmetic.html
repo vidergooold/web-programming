@@ -53,7 +53,13 @@
                 let message = "Welcome to my webpage!\nHave a good one:)";
                 alert(message);
             }
-
+            function changeOutput(buttonNum, backColor, textColor, borderColor, borderWidth) {
+                let output = document.getElementById('output');
+                output.innerHTML = 'Нажата кнопка' + buttonNum;
+                output.style.backgroundColor = backColor;
+                output.style.color = textColor;
+                output.style.border = borderWidth + ' solid ' + borderColor;;
+            }
         </script>
         <style>
             .message {
@@ -70,6 +76,11 @@
             } 
             footer {
                 cursor: not-allowed;
+            }
+            #output {
+                border: 1px solid;
+                width: 300px;
+                height: 40px;
             }
         </style>
     </head>
@@ -88,6 +99,15 @@
             <div class="message" onclick="showProduct()">Найти произведение</div>
             <div class="message" onclick="showDivision()">Найти деление</div>
             <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+
+            <div>
+                <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow', 'blue', '3px')">
+                <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime', 'orange', '5px')">
+                <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'white', 'pink', 'green', '2px')">
+                <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'purple', 'white', 'silver', '4px')">
+            </div>
+
+            <div id="output"></div>
         </main>
 
         <footer ondblclick="welcomeMessage()">
