@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Видергольд Ирина Сергеевна. Лабораторная 5</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+        <link rel="icon" href="../favicon-48x48.ico">
+        <style>
+            .basket {
+                border: 1px solid #000;
+                padding: 15px;
+                margin: 10px;
+                width: fit-content;
+            }
+            .item label,
+            .item input {
+                display: block; /* Элементы теперь занимают всю ширину */
+            }
+            .item label {
+                margin-bottom: 5px; /* Отступ между названием и полем ввода */
+            }
+            .item input {
+                width: 80%; /* Ширина поля ввода */
+                margin-bottom: 10px; /* Отступ между полями ввода */
+            }
+            button {
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+            #totalCost {
+                margin-top: 10px;
+            }
+        </style>
+        <script>
+            function calculateTotal() {
+                const prices = {
+                    'apple': 100,
+                    'banana': 80,
+                    'orange': 150,
+                    'grape': 200,
+                    'melon': 300
+                };
+                let total = 0;
+                for (const fruit in prices) {
+                    const quantity = document.getElementById(fruit).value;
+                    total += (quantity ? quantity * prices[fruit] : 0);
+                }
+                document.getElementById('totalCost').innerText = 'Общая стоимость: ' + total + 'р.';
+            }
+
+            function clearBasket() {
+                const inputs = document.querySelectorAll('.basket input[type="number"]');
+                inputs.forEach(input => {
+                    input.value = '';
+                });
+                document.getElementById('totalCost').innerText = '';
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 5
+            <hr>
+        </header>
+
+        <main>
+            <div class="basket">
+                <h2>Корзина товаров</h2>
+                <div class="item">
+                    <label for="apple">Яблоки (100р/шт):</label>
+                    <input type="number" id="apple" min="0" placeholder="0">
+                </div>
+                <div class="item">
+                    <label for="banana">Бананы (80р/шт):</label>
+                    <input type="number" id="banana" min="0" placeholder="0">
+                </div>
+                <div class="item">
+                    <label for="orange">Апельсины (150р/шт):</label>
+                    <input type="number" id="orange" min="0" placeholder="0">
+                </div>
+                <div class="item">
+                    <label for="grape">Виноград (200р/шт):</label>
+                    <input type="number" id="grape" min="0" placeholder="0">
+                </div>
+                <div class="item">
+                    <label for="melon">Дыни (300р/шт):</label>
+                    <input type="number" id="melon" min="0" placeholder="0">
+                </div>
+                <button onclick="calculateTotal()">Рассчитать</button>
+                <button onclick="clearBasket()">Очистить</button>
+                <p id="totalCost"></p>
+            </div>
+        </main>
+
+        <footer>
+            <hr>
+            &copy; Видергольд Ирина, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>
