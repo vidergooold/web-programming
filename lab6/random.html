@@ -17,6 +17,14 @@
                 width: fit-content;
                 text-align: center;
             }
+            #rules-list {
+                text-align: left;
+                list-style-type: none;
+                padding: 0;
+            }
+            #rules-list li {
+                margin-bottom: 5px;
+            }
         </style>
         <script>
             let number;
@@ -72,6 +80,16 @@
                     document.getElementById('result').innerHTML = '';
                     document.getElementById('user-number').value = ''; // Очистка поля ввода
             }
+            function showRules() {
+                document.getElementById('show-rules').style.display = 'none';
+                document.getElementById('hide-rules').style.display = 'inline';
+                document.getElementById('rules-list').style.display = 'block';
+            }
+            function hideRules() {
+                document.getElementById('hide-rules').style.display = 'none';
+                document.getElementById('show-rules').style.display = 'inline';
+                document.getElementById('rules-list').style.display = 'none';
+            }
         </script>
     </head>
 
@@ -109,6 +127,22 @@
                 <div>
                     <button onclick="again()">Сыграть еще раз</button>
                 </div>
+            </div>
+
+            <div class="game">
+                <button id="show-rules" onclick="showRules()">
+                    Показать правила игры
+                </button>
+                <button id="hide-rules" onclick="hideRules()" style="display:none;">
+                    Скрыть правила игры
+                </button>
+                <ul id="rules-list" style="display: none;">
+                    <li>I. Игра предназначена для одного игрока.</li>
+                    <li>II. На старте игры компьютер загадывает число от 1 до 100.</li>
+                    <li>III. Игрок должен угадать это число, используя как можно меньше попыток.</li>
+                    <li>IV. Если введенное число больше загаданного, игра сообщит, что число слишком большое.</li>
+                    <li>V. Если число меньше загаданного, игра сообщит, что число слишком маленькое.</li>
+                </ul>
             </div>
         </main>
 
