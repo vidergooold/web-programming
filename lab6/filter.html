@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Видергольд Ирина Сергеевна. Лабораторная 6</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+        <link rel="icon" href="../favicon-48x48.ico">
+        <script>
+            function filter() {
+                let color = document.getElementById('wear-color').value;
+                let type = document.getElementById('wear-type').value;
+                let wear = document.getElementById('wear');
+
+                if(color == 'Красный' && type == 'Футболка') {
+                    wear.src = 'red_tshirt.jpg';
+                }
+                if(color == 'Красный' && type == 'Поло') {
+                    wear.src = 'red_polo.jpg';
+                }
+                if(color == 'Красный' && type == 'Майка') {
+                    wear.src = 'red_top.jpg';
+                }
+                if(color == 'Белый' && type == 'Футболка') {
+                    wear.src = 'white_tshirt.jpg';
+                }
+                if(color == 'Белый' && type == 'Поло') {
+                    wear.src = 'white_polo.jpeg';
+                }
+                if(color == 'Белый' && type == 'Майка') {
+                    wear.src = 'white_top.jpg';
+                }
+                if(color == 'Черный' && type == 'Футболка') {
+                    wear.src = 'black_tshirt.jpg';
+                }
+                if(color == 'Черный' && type == 'Поло') {
+                    wear.src = 'black_polo.jpg';
+                }
+                if(color == 'Черный' && type == 'Майка') {
+                    wear.src = 'black_top.jpg';
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 6
+            <hr>
+        </header>
+
+        <main>
+            <div>
+                Цвет одежды:
+                <select id="wear-color">
+                    <option>Красный</option>
+                    <option>Белый</option>
+                    <option>Черный</option>
+                </select><br>
+
+                Тип одежды:
+                <select id="wear-type">
+                    <option>Футболка</option>
+                    <option>Поло</option>
+                    <option>Майка</option>
+                </select><br>
+
+                <button onclick="filter()">OK</button><br>
+
+                <img id="wear">
+            </div>
+        </main>
+
+        <footer>
+            <hr>
+            &copy; Видергольд Ирина, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html> 
