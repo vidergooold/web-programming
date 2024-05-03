@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Видергольд Ирина Сергеевна. Лабораторная 6</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+        <link rel="icon" href="../favicon-48x48.ico">
+        <style>
+            #cart {
+                border: 1px solid rgb(66, 123, 189);
+                padding: 10px;
+                margin-bottom: 20px;
+            }
+            #cart table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            #cart th, #cart td {
+                border: 1px solid black;
+                padding: 8px;
+                text-align: center;
+            }
+            #cart th {
+                background-color: #f2f2f2;
+            }
+        </style>
+        <script>
+            // Функция для вычисления общей суммы товаров и проверки баланса
+            function calculateTotal() {
+                // Получаем значение баланса пользователя
+                let balance = document.getElementById('balance').value;
+                // Общая сумма товаров
+                let total = 0;
+                // Массив для хранения ошибок
+                let errors = [];
+        
+                // Проходим по каждому товару в корзине
+                for (let i = 1; i <= 7; i++) {
+                    // Получаем количество выбранного товара
+                    let quantity = parseInt(document.getElementById('item' + i).value);
+                    // Проверяем, является ли введенное значение числом
+                    if (!isNaN(quantity)) {
+                        // Проверяем, чтобы количество товара было неотрицательным
+                        if (quantity < 0) {
+                            errors.push("Количество товара " + i + " не может быть отрицательным.");
+                        } else {
+                            // Вычисляем цену товара в зависимости от его номера
+                            let price;
+                            switch (i) {
+                                case 1:
+                                    price = 50;
+                                    break;
+                                case 2:
+                                    price = 100;
+                                    break;
+                                case 3:
+                                    price = 80;
+                                    break;
+                                case 4:
+                                    price = 30;
+                                    break;
+                                case 5:
+                                    price = 70;
+                                    break;
+                                case 6:
+                                    price = 40;
+                                    break;
+                                case 7:
+                                    price = 60;
+                                    break;
+                            }
+                            // Увеличиваем общую сумму товаров
+                            total += quantity * price;
+                        }
+                    }
+                }
+        
+                // Проверяем, что пользователь выбрал хотя бы один товар
+                if (total === 0) {
+                    errors.push("Выберите хотя бы один товар.");
+                }
+        
+                // Проверяем, достаточно ли у пользователя средств для оплаты товаров
+                if (errors.length === 0) {
+                    if (total > balance) {
+                        // Выводим сообщение, если сумма товаров превышает баланс
+                        document.getElementById('result').innerHTML = "Общая сумма товаров превышает ваш баланс.";
+                    } else {
+                        // Выводим сообщение об успешном оформлении заказа
+                        document.getElementById('result').innerHTML = "Заказ оформлен успешно. Общая сумма: " + total + " руб.";
+                    }
+                } else {
+                    // Выводим сообщения об ошибках, если они есть
+                    document.getElementById('result').innerHTML = errors.join("<br>");
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <h1>Корзина товаров</h1>
+            <hr>
+        </header>
+
+        <main>
+            <!-- Поле для ввода баланса пользователя -->
+            <label for="balance">Мой баланс:</label>
+            <input type="number" id="balance" min="0"><br><br>
+
+            <!-- Таблица корзины с товарами, их ценами и количеством -->
+            <div id="cart">
+                <table>
+                    <tr>
+                        <th>Товар</th>
+                        <th>Цена</th>
+                        <th>Количество</th>
+                    </tr> 
+                    <tr>
+                        <td>Хлеб</td>
+                        <td>50 руб.</td>
+                        <!-- Поле для ввода количества товара -->
+                        <td><input type="number" id="item1" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Сок</td>
+                        <td>100 руб.</td>
+                        <td><input type="number" id="item2" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Шоколадка</td>
+                        <td>80 руб.</td>
+                        <td><input type="number" id="item3" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Банан</td>
+                        <td>30 руб.</td>
+                        <td><input type="number" id="item4" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Авокадо</td>
+                        <td>70 руб.</td>
+                        <td><input type="number" id="item5" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Яблоко</td>
+                        <td>40 руб.</td>
+                        <td><input type="number" id="item6" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Молоко</td>
+                        <td>60 руб.</td>
+                        <td><input type="number" id="item7" min="0"></td>
+                    </tr>
+                </table>
+            </div>
+            <br> 
+            <button onclick="calculateTotal()">ОК</button><br><br>
+            <div id="result"></div> <!-- Здесь будет выводиться результат вычислений -->
+        </main>
+
+        <footer>
+            <hr>
+            &copy; Видергольд Ирина, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>
