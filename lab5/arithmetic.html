@@ -10,26 +10,77 @@
         <link rel="icon" href="../favicon-48x48.ico">
         <script>
             function showSum() {
-                let a = 5154;
-                let b = 7891;
+                let inputA = document.getElementById('numberA')
+                let inputB = document.getElementById('numberB')
+
+                let a = parseInt(inputA.value);
+                let b = parseInt(inputB.value);
                 let result = a + b;
                 alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
+            }
+            function showDifference() {
+                let inputA = document.getElementById('numberA').value;
+                let inputB = document.getElementById('numberB').value;
+
+                let a = parseInt(inputA);
+                let b = parseInt(inputB);
+                let result = a - b;
+                alert('Разность ' + a + ' и ' + b + ' равна ' + result);
+            }
+            function showProduct() {
+                let inputA = document.getElementById('numberA').value;
+                let inputB = document.getElementById('numberB').value;
+
+                let a = parseInt(inputA);
+                let b = parseInt(inputB);
+                let result = a * b;
+                alert('Произведение ' + a + ' и ' + b + ' равно ' + result);
+            }
+            function showDivision() {
+                let inputA = document.getElementById('numberA').value;
+                let inputB = document.getElementById('numberB').value;
+
+                let a = parseInt(inputA);
+                let b = parseInt(inputB);
+                let result = a / b;
+                alert('Частное ' + a + ' и ' + b + ' равно ' + result.toFixed(2));
             }
             function showAuthor() {
                 let author = 'Автор страницы:\nВидергольд Ирина Сергеевна';
                 alert(author);
             }
+            function welcomeMessage() {
+                let message = "Welcome to my webpage!\nHave a good one:)";
+                alert(message);
+            }
+            function changeOutput(buttonNum, backColor, textColor, borderColor, borderWidth) {
+                let output = document.getElementById('output');
+                output.innerHTML = 'Нажата кнопка' + buttonNum;
+                output.style.backgroundColor = backColor;
+                output.style.color = textColor;
+                output.style.border = borderWidth + ' solid ' + borderColor;;
+            }
         </script>
         <style>
             .message {
-                width: 250px;
-                line-height: 50px;
-                height: 50px;
-                text-align: center;
-                background-color: rgb(222, 196, 224);
-                margin: 10px;
                 cursor: pointer;
+                width: 250px;
+                border: 3px solid #d465c2;
+                margin: 5px;
                 display: inline-block;
+                vertical-align: top;
+                padding: 10px;
+            }
+            header {
+                cursor: pointer;
+            } 
+            footer {
+                cursor: not-allowed;
+            }
+            #output {
+                border: 1px solid;
+                width: 300px;
+                height: 40px;
             }
         </style>
     </head>
@@ -41,12 +92,25 @@
         </header>
 
         <main>
-            <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
+            <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
+            <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
+            <div class="message" onclick="showSum()">Найти сумму чисел</div>
+            <div class="message" onclick="showDifference()">Найти разность чисел</div>
+            <div class="message" onclick="showProduct()">Найти произведение</div>
+            <div class="message" onclick="showDivision()">Найти деление</div>
             <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
-           
+
+            <div>
+                <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow', 'blue', '3px')">
+                <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime', 'orange', '5px')">
+                <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'white', 'pink', 'green', '2px')">
+                <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'purple', 'white', 'silver', '4px')">
+            </div>
+
+            <div id="output"></div>
         </main>
 
-        <footer>
+        <footer ondblclick="welcomeMessage()">
             <hr>
             &copy; Видергольд Ирина, ФБИ-22, 2 курс, 2024
         </footer>

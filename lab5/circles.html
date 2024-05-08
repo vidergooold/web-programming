@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Видергольд Ирина Сергеевна. Лабораторная 5</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+        <link rel="icon" href="../favicon-48x48.ico">
+        <style>
+            .circle {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                position: absolute;
+                display: flex;
+                align-items: center; /* Центрирование содержимого по вертикали */
+                justify-content: center; /* Центрирование содержимого по горизонтали */
+                font-size: 20px; /* Размер шрифта в круге */
+                color: white;
+                transition: opacity 0.5s ease, transform 0.5s ease;
+            }
+            button {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+            }
+        </style>
+        <script>
+            window.onload = function() {
+                const circles = document.querySelectorAll('.circle'); // Получаем все круги
+                circles.forEach(circle => {
+                    circle.addEventListener('click', function() {
+                        this.style.opacity = '0'; // Скрываем круг, уменьшая прозрачность
+                        this.style.transform = 'scale(0)'; // Уменьшаем круг до нуля
+                    });
+                });
+            };
+            function restoreCircles() {
+                document.querySelectorAll('.circle').forEach(circle => {
+                    circle.style.opacity = '1'; // Возвращаем прозрачность
+                    circle.style.transform = 'scale(1)'; // Возвращаем размер
+                });
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 5
+            <hr>
+        </header>
+
+        <main>
+            <button onclick="restoreCircles()">Восстановить круги</button>
+            <div class="circle" style="background-color: #e57373; top: 10%; left: 20%;">1</div>
+            <div class="circle" style="background-color: #BA68C8; top: 15%; left: 50%;">2</div>
+            <div class="circle" style="background-color: #64B5F6; top: 20%; left: 75%;">3</div>
+            <div class="circle" style="background-color: #4DB6AC; top: 25%; left: 30%;">4</div>
+            <div class="circle" style="background-color: #81C784; top: 30%; left: 90%;">5</div>
+            <div class="circle" style="background-color: #FFD54F; top: 35%; left: 10%;">6</div>
+            <div class="circle" style="background-color: #FF8A65; top: 40%; left: 60%;">7</div>
+            <div class="circle" style="background-color: #90A4AE; top: 45%; left: 40%;">8</div>
+            <div class="circle" style="background-color: #A1887F; top: 50%; left: 85%;">9</div>
+            <div class="circle" style="background-color: #E0E0E0; top: 55%; left: 25%;">10</div>
+        </main>
+
+        <footer>
+            <hr>
+            &copy; Видергольд Ирина, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>
