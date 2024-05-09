@@ -82,6 +82,29 @@
                     main.appendChild(newCircle);
                 }
             }
+            function addBlocksWithOpacity() {
+                let main = document.querySelector('main');
+
+                main.innerHTML = '';
+
+                let numberOfBlocks = 10;
+                for (let i = 1; i <= numberOfBlocks; i++) {
+
+                    let newBlock = document.createElement('div');
+                    newBlock.style.width = '100px';
+                    newBlock.style.height = '40px';
+                    newBlock.style.backgroundColor = 'blue';
+                    newBlock.style.margin = '5px';
+                    newBlock.style.border = '1px solid black';
+
+                    // Устанавливаем значения прозрачности от 0% до 100%
+                    newBlock.style.opacity = i / numberOfBlocks;
+
+                    newBlock.innerHTML = `Блок №${i}`;
+
+                    main.appendChild(newBlock);
+                }
+            }
         </script>
     </head>
 
@@ -98,6 +121,7 @@
             <button onclick="addNewBlocks()">Добавить блоки</button>
             <button onclick="add20_50()">20 => 50</button>
             <button onclick="add10_minus80()">10 => -80</button>
+            <button onclick="addBlocksWithOpacity()">Полупрозрачные блоки</button>
         </main>
 
         <footer>
