@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Видергольд Ирина Сергеевна. Лабораторная 8</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-32x32.png">
+        <link rel="icon" href="../favicon-48x48.ico">
+        <script src="get-days-count.js"></script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+            main {
+                display: flex;
+                flex-direction: column;
+                align-items: left;
+            }
+            .date-form {
+                margin: 20px;
+            }
+            .date-form input, .date-form button {
+                padding: 10px;
+                margin: 5px;
+                font-size: 16px;
+            }
+            #days-count-result {
+                margin-top: 20px;
+                font-size: 18px;
+                color: #333;
+            }
+            button.clear {
+                background-color: rgb(74, 11, 247);
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 8
+            <hr>
+        </header>
+
+        <main>
+            <div class="date-form">
+                <label for="input-date">Дата рождения: </label>
+                <input type="date" id="input-date">
+                <button onclick="showDaysCount()">Показать число дней</button>
+                <button class="clear" onclick="clearFields()">Очистить</button>
+            </div>
+            <div id="days-count-result"></div> 
+        </main>
+
+        <footer>
+            <hr>
+            &copy; Видергольд Ирина, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html> 
