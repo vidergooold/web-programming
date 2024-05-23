@@ -24,6 +24,32 @@
                 text-align: center;
                 margin-top: 20px;
             }
+            #clock-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            }
+            #clock {
+                width: 200px;
+                height: 200px;
+                border: 5px solid #333;
+                border-radius: 50%;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #second-hand {
+                width: 2px;
+                height: 90px;
+                background: red;
+                position: absolute;
+                bottom: 50%;
+                transform-origin: bottom;
+                transform: rotate(0deg);
+                transition: transform 1s linear;
+            }
         </style>
     </head>
 
@@ -35,7 +61,11 @@
         </header>
 
         <main>
-            <div id="seconds">00:00:00</div>
+            <div id="seconds">00</div>
+            <div id="clock-container">
+            <div id="clock">
+                <div id="second-hand"></div>
+            </div>
         </main>
 
         <footer>
