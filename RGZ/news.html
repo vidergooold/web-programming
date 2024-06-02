@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Новости - ПАО Комбанк "Химик"</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="favicon-48x48.ico">
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            font-size: 16px; /* общий размер шрифта */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+            width: calc(100% - 220px);
+        }
+        h1 {
+            color: #333;
+        }
+        .news-card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            position: relative;
+            font-size: 16px; /* Размер шрифта для новостей */
+        }
+        .news-card h2 {
+            margin: 0;
+            font-size: 16px; /* Размер шрифта для заголовка */
+        }
+        .news-card p {
+            margin: 10px 0;
+        }
+        .show-more {
+            color: #d30a0a;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .full-text {
+            display: none;
+        }
+        .summary-text {
+            display: block;
+        }
+        .news-date {
+            color: #d30a0a;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 14px; /* Размер шрифта для даты */
+        }
+        .news__title {
+            color: #313131;
+            font-weight: 515;
+            font-size: 14px; /* Размер шрифта для заголовка */
+        }
+        .news-text {
+            color: #929292;
+            font-size: 14px; /* Размер шрифта для текста новости */
+        }
+    </style>
+    <script>
+        function toggleFullText(id) {
+            var fullText = document.getElementById(id);
+            var summaryText = document.getElementById('summary-' + id);
+            if (fullText.style.display === "none") {
+                fullText.style.display = "block";
+                summaryText.style.display = "none";
+            } else {
+                fullText.style.display = "none";
+                summaryText.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <a href="company.html">О компании</a>
+            <a href="news.html">Новости</a>
+            <a href="valute.html">Курс валют</a>
+            <a href="contact_data.html">Контактные данные</a>
+            <a href="video.html">Видео</a>
+        </div>
+        <div class="content">
+            <h1>Новости</h1>
+            <div class="news-card">
+                <h2 class="news__title">Изменения в режиме работы в праздничные дни в марте</h2>
+                <span class="news-date">07.03.2024</span>
+                <p id="summary-news8" class="summary-text news-text">Уважаемые клиенты...</p>
+                <p id="news8" class="full-text news-text">Уважаемые клиенты! <br>Обращаем ваше внимание на изменения в работе ПАО Комбанк «Химик» в марте 2024 года. <br>7 марта - рабочий день сокращен на 1 час, <br>8 – 10 марта – выходные дни.</p>
+                <p class="show-more" onclick="toggleFullText('news8')">показать</p>
+            </div>
+            <div class="news-card">
+                <h2 class="news__title">Новость – ставки по вкладам</h2>
+                <span class="news-date">06.03.2024</span>
+                <p id="summary-news9" class="summary-text news-text">С 08 февраля 2024 года каждый клиент...</p>
+                <p id="news9" class="full-text news-text">С 08 февраля 2024 года каждый клиент ПАО Комбанк «Химик» получает возможность увеличить доход от размещения вкладов.<br>
+                    Теперь открыть вклад и начать накопления на исполнение заветной мечты стало еще выгоднее!<br>
+                    Так, по вкладу «Сберегательный» теперь ставка составляет до 14% годовых в рублях.</p>
+                <p class="show-more" onclick="toggleFullText('news9')">показать</p>
+            </div>
+            <div class="news-card">
+                <h2 class="news__title">Новость – ДБО</h2>
+                <span class="news-date">04.03.2024</span>
+                <p id="summary-news10" class="summary-text news-text">БПАО Комбанк «Химик» продолжает совершенствование банковских технологий...</p>
+                <p id="news10" class="full-text news-text">ПАО Комбанк «Химик» продолжает совершенствование банковских технологий и в целях обеспечения высокого качества предоставления Банком услуг по дистанционному банковскому обслуживанию, Банк развертывает современную и надежную систему дистанционного банковского обслуживания «Ibank», производства ООО «Бифит».<br>
+                    Новая система обеспечивает повышенный уровень безопасности, поддерживает большинство распространенных браузеров и современные версии операционных систем, отличается простотой установки и требует минимального технического сопровождения со стороны Клиента.</p>
+                <p class="show-more" onclick="toggleFullText('news10')">показать</p>
+            </div>
+            <div class="news-card">
+                <h2 class="news__title">Смена собственника банка «Химик»</h2>
+                <span class="news-date">07.02.2024</span>
+                <p id="summary-news1" class="summary-text news-text">Региональный банк «Химик» в Дзержинске сменил собственника...</p>
+                <p id="news1" class="full-text news-text">Региональный банк «Химик» в Дзержинске Нижегородской области сменил собственника. Новый контрольный пакет акций (84,33%) приобрела Анфиса Анисимова, супруга бывшего депутата Законодательного собрания Нижегородской области Валерия Анисимова. На внеочередном собрании акционеров 1 февраля 2024 года был избран новый состав Совета директоров банка.</p>
+                <p class="show-more" onclick="toggleFullText('news1')">показать</p>
+            </div>
+            <div class="news-card">
+                <h2 class="news__title">Открытие нового офиса</h2>
+                <span class="news-date">15.12.2023</span>
+                <p id="summary-news2" class="summary-text news-text">Банк «Химик» открыл новый офис в Москве...</p>
+                <p id="news2" class="full-text news-text">В декабре 2023 года ПАО Комбанк «Химик» открыл новый офис в Москве. Новый офис, расположенный в центре города, предлагает полный спектр банковских услуг и направлен на улучшение качества обслуживания клиентов.</p>
+                <p class="show-more" onclick="toggleFullText('news2')">показать</p>
+            </div>
+            <div class="news-card">
+                <h2 class="news__title">Внедрение новых технологий</h2>
+                <span class="news-date">01.10.2023</span>
+                <p id="summary-news3" class="summary-text news-text">Банк «Химик» внедрил новую систему онлайн-банкинга...</p>
+                <p id="news3" class="full-text news-text">Банк «Химик» внедрил новую систему онлайн-банкинга, которая позволяет клиентам совершать операции быстрее и безопаснее. Новая платформа обеспечивает высокий уровень защиты данных и удобство использования.</p>
+                <p class="show-more" onclick="toggleFullText('news3')">показать</p>
+            </div>
+            <div class="news-card">
+                <h2 class="news__title">Обновление мобильного приложения</h2>
+                <span class="news-date">20.09.2023</span>
+                <p id="summary-news4" class="summary-text news-text">Банк «Химик» выпустил обновленную версию мобильного приложения...</p>
+                <p id="news4" class="full-text news-text">Банк «Химик» выпустил обновленную версию мобильного приложения, которое стало еще удобнее и функциональнее. Новое приложение включает в себя дополнительные функции для управления счетами и проведения операций.</p>
+                <p class="show-more" onclick="toggleFullText('news4')">показать</p>
+            </div>
+            <div class="news-card">
+                <h2 class="news__title">Благотворительная акция</h2>
+                <span class="news-date">05.08.2023</span>
+                <p id="summary-news5" class="summary-text news-text">Сотрудники банка «Химик» приняли участие в благотворительной акции...</p>
+                <p id="news5" class="full-text news-text">Сотрудники банка «Химик» приняли участие в благотворительной акции по сбору средств для детских домов. Акция позволила собрать значительную сумму, которая будет направлена на улучшение условий жизни детей.</p>
+                <p class="show-more" onclick="toggleFullText('news5')">показать</p>
+            </div>
+            <div class="news-card">
+                <h2 class="news__title">Поддержка стартапов</h2>
+                <span class="news-date">20.07.2023</span>
+                <p id="summary-news6" class="summary-text news-text">Банк «Химик» объявил о запуске программы поддержки стартапов...</p>
+                <p id="news6" class="full-text news-text">Банк «Химик» объявил о запуске программы поддержки стартапов, предоставляя льготные условия кредитования и консультационные услуги для молодых предпринимателей. Программа направлена на развитие инновационного бизнеса и поддержку начинающих компаний.</p>
+                <p class="show-more" onclick="toggleFullText('news6')">показать</p>
+            </div>
+            <div class="news-card">
+                <h2 class="news__title">Партнерство с международными организациями</h2>
+                <span class="news-date">10.06.2023</span>
+                <p id="summary-news7" class="summary-text news-text">Банк «Химик» заключил партнерские соглашения с рядом международных финансовых институтов...</p>
+                <p id="news7" class="full-text news-text">Банк «Химик» заключил партнерские соглашения с рядом международных финансовых институтов, что позволит расширить спектр предоставляемых услуг и улучшить условия для наших клиентов.</p>
+                <p class="show-more" onclick="toggleFullText('news7')">показать</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
